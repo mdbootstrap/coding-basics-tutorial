@@ -1,0 +1,37 @@
+<form id=" vatCalculator">
+
+    <div>
+    <input type="text" id="amount" name="amount" placeholder="0.00 (before VAT)" value="" />
+    <input type="text" id="vat" name="vat" placeholder="%0" value="" />
+  
+    <button onClick="calculateVat()">Calculate tax</button> <br>
+    </div>  <br>
+
+    <legend>Net price</legend>
+    <p id="net"></p>
+
+    <legend>Gross</legend>
+    <p id="gross"></p>  
+    
+</form>
+
+<script> 
+function calculateVat() {
+    event.preventDefault();
+    let amount = parseInt(document.getElementById("amount").value)
+    let vat = parseInt(document.getElementById("vat").value)
+
+
+    let net  = amount/ (amount + vat*amount/100);
+    let gross = (amount + vat*amount/100);
+    document.getElementById("net").innerHTML = net;
+    document.getElementById("gross").innerHTML = gross;
+
+console.log(net);
+console.log(gross);
+
+}
+
+
+
+</script>

@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<h1>Functions</h1>
+
+<h2>Why to use functions</h2>
+
+<p>Quite often we need to perform a similar action in many places of the script.
+    For example, we need to show a nice-looking message when a visitor logs in, logs out and maybe somewhere else.
+    We’ve already seen examples of built-in functions, like alert(message) , or console.log(message).</p>
+
+
+<p>Let's create our first function</p>
+
+<pre><code>
+function showMessage() {
+alert( 'Hello everyone!' );
+}    
+</code></pre>
+
+
+<p>Lets copy this to our working file.</p>
+
+<p>... and nothing happens. It's like with variable. You have to use it</p>
+
+<pre><code>
+showMessage();
+</code></pre>
+
+<p>and we can call it multiple times</p>
+
+<pre><code>
+showMessage();
+showMessage(); 
+</code></pre>
+
+<h2>Function arguments  </h2>
+
+
+<p>So this is how we define function, lets talk about parameters.</p>
+
+<p>Functions can accept parameters to use them inside the function.</p>
+
+<pre><code>
+function showMessage(argument) {
+    let message = "Hello "
+
+    alert(message + argument)
+}
+
+showMessage("John");
+showMessage("David");
+</code></pre>
+
+<p>Except for strings we can of course do math like: </p>
+
+
+<pre><code>
+function power(x){
+    console.log(x*x);
+}
+
+power(2); power(3); power(10);
+</code></pre>
+// 
+
+
+<h2>Returning a value </h2>
+
+<p>As I mentioned in a presentation, functions are like vending machines which can give you some output as well (but doesn't necesseraly have to);
+</p>
+
+<p>Let's create function which instead of showing message, it will return result. </p>
+
+<pre><code>
+function power(x){
+    return x*x
+}
+
+power(2);
+</code></pre>
+
+<p> We have to assign result to something. </p>
+
+<pre><code>
+let result = power(2);
+console.log(result);    
+</code></pre>
+
+<p>Or we can directly call function in function </p>
+
+<pre><code>
+console.log(power(5));
+</code></pre>
+
+<p>We can use directive return in many places.</p>
+
+
+<h2>Conditions</h2>
+
+<p>The biggest advantage of coding is that you can react dynamically. Let's have a look at following example:</p>
+
+<pre><code>
+function validateAge(age){
+    if (age>17){
+    return "Adult";
+    } else { 
+        return "Underage";
+    }
+}
+
+console.log(validateAge(15));
+console.log(validateAge(20));
+</code></pre>
+
+
+<p>Conditions are videly used in programming, they are decision point in our program. </p>
+
+<pre><code>
+/* condition in general */
+
+if (this_condition_is_true){
+    then this will happen
+} else { 
+    that will happen
+}
+</code></pre>
+
+
+<h2>ELSE isn't mandatory</h2>
+
+
+
+<pre><code>
+function playMovie(age){
+    if (age<19){
+        alert("Underage spotted! Stopping program");
+        return;
+    }
+
+    alert("Playing movie");
+}
+
+playMovie(5);
+playMovie(50);
+</code></pre>
+
+    <h2>Booleans</h2>
+
+    <p> While using functions you will quickly step upon new type of variable called boolean. This special kind of variable accepts only 2 values. True or false, you can also use 1 and 0 instead</p>
+
+    <p>Booleans are often used in functions and conditions </p>
+
+    /*
+
+<pre><code>
+    if (condition_which_at_the_end_is_either_true_or_false)
+</code></pre>
+
+<p>i.e.</p>   
+
+<pre><code>
+if (isAdult()) {...}
+if (isEven()) {...}
+if (isAllowedPermited()) {...}
+</code></pre>
+
+<p>Secondly , we often used booleans to in return statements i.e.</p>
+
+<pre><code>
+if (age>17) {
+    return true
+} else { 
+    return false
+}
+</code></pre>
+
+<p>This is very important because we should always keep in mind that our function should only 1 thing:</p>
+
+<pre><code>
+getAge() 
+checkPermisions()
+grantAcces()
+</code></pre>
+
+<p>Let's get back to our previous example:</p>
+
+<pre><code>
+function validateAge(age){
+    if (age>17){
+    return "Adult";
+    } else { 
+        return "Underage";
+    }
+}
+</code></pre>
+
+
+<p>And combine it with our playMovie() functions</p>
+   
+
+<pre><code>
+    function playMovie(age){
+        if (age<19){
+            alert("Underage spotted! Stopping program")
+            return;
+        }
+
+        alert("Playing movie");
+    }
+</code></pre>
+
+<p> As we mentioned before, our playMovie() function should only play movie and not check the age so let's rewrite it:</p>
+
+<pre><code>
+    function isAdult(age){
+        if (age>17){
+        return true;
+        } else { 
+            return false;
+        }
+    }
+</code></pre>
+  
+
+<p>to:</p>
+
+<pre><code>
+    function playMovie(age){
+        if(isAdult(age)){
+            alert("Playing movie")
+        } else{
+            alert("You are not allowed to watch this movie")
+        }
+    }
+</code></pre>
+
+
+<p> Now you can read the code without any comments. But what is more important - you can reuse your isAdult() function i.e. if you were to build another function playGame(age) which also check age, instead of copying and paste same code:</p>
+
+<pre><code>
+    function playMovie(age){
+        if (age<19){
+            alert("Underage spotted! Stopping program")
+            return;
+        }
+        alert("Playing movie");
+    }
+
+    function playGame(age){
+        if (age<19){
+            alert("Underage spotted! Stopping program")
+            return;
+        }
+        alert("Playing movie");
+    }
+
+</code></pre>
+
+
+<p>You can use your isAdult() function, and in case of change of permitted age, you have to change it only in single place </p>
+
+
+<h2> Comparisons</h2>
+
+<p>Let's do one more update in our isAdult function </p>
+
+
+<pre><code></code></pre>
+function isAdult(age){
+    if (age>17){
+    return true;
+    } else { 
+        return false;
+    }
+}
+
+<p>Assuming that officialy teen become adults when they turn 18, instead of saying "if age is greater than 17" we could say if "if age ise greater or equal than 18"</p>
+
+<p> if (age>17) VS if(age>=18)</p>
+
+   
+<p> And if we would like to allow to watch movie people which are exactly 18, we would use:</p>
+
+<pre><code> if (age==18)</code></pre>
+
+   <p>You can also compare strings: i.e. if(name=="David")</p>
+
+<pre><code>
+function onlyForDavids(name){
+    if (name=="Dawid"){
+        alert("Good David you can watch")
+        return;
+    }
+    alert("Sorry " + name + ". You cant watch movie");
+}
+
+onlyForDavids("Dawid");
+onlyForDavids("Peter");
+
+</code></pre>
+
+
+<p>or make sure that string doesn't have specific value </p>
+
+<pre><code>
+function notForPeter(name){
+    if (name!="Peter"){
+        alert(name + " you can watch")
+        return;
+    }
+    alert("Sorry " + name + ". You cant watch movie");
+}
+
+
+notForPeter("Dawid");
+notForPeter("Peter");
+</code></pre>
+
+ <p> Our function will return a number and return: <br>
+    - a power of the number,    if number is even <br>
+    - number increased by 5     if number is odd
+</p>
+
+<pre><code>
+    function final(x){
+        if(x%2 == 0) {
+            return x*x;
+        } else { 
+            return x+5;
+        }
+    }
+    
+        console.log(final(2));
+        console.log(final(5));
+</code></pre>
+
+
+<p> We used here new syntax x%2 -its called modulo %. Modulo operation return remainder after division of 2 number    i.e.</p>
+
+<pre><table>
+2%2     //will return 0 casue 2/2 = 1 + 0 (1*2+0 = 2) 
+5%2     //will return 1 cause 5/2 = 4 + 1 (2*2+1 = 5) 
+11%3    //will return 2 cause 11/3 = 3 + 2 (3*3+2 = 11)
+</table></pre>
+
+
+
+<h2>Function naming </h2>
+
+<p>    Functions are actions. So their name is usually a verb. <br>
+    It should be brief, as accurate as possible and describe what the function does, 
+    so that someone reading the code gets an indication of what the function does.</p>
+
+<p>    For instance, functions that start with "show" usually show something.</p>
+
+<p>Function starting with…
+</p>
+<pre><code>
+    "get…" – return a value,
+    "calc…" – calculate something,
+    "create…" – create something,
+    "check…" – check something and return a boolean, etc.
+    
+    showMessage(..)     // shows a message
+    getAge(..)          // returns the age (gets it somehow)
+    calcSum(..)         // calculates a sum and returns the result
+    createForm(..)      // creates a form (and usually returns it)
+    checkPermission(..) // checks a permission, returns */
+</code></pre>
+
+<p>This is why functions and programmin itself is so amazing you can automate many things using functions. Imagine that you are working in HR department and you want to calculate salary for each employee. </p>
+
+
+
+</body>
+
+</html>

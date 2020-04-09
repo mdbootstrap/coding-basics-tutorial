@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+    img {
+        max-width: 99%;
+        max-height: 99%;
+    }
+</style>
+
+<body>
+
+    <h1>Variables</h1>
+
+    <h2>Comments</h2>
+
+    <p>You can write your JavaScript comment starting with // . Example:</p>
+
+    <pre><code>
+    // This code will not run
+</code></pre>
+
+    <p>For multi line comment you can use following syntax:</p>
+
+
+    <pre><code>
+    /* For multi line comment we cane us 
+    this 
+    way
+    of
+    commenting 
+    and finish it here */ 
+</code></pre>
+
+
+    <h2>Semicolons</h2>
+    <p>Semicolons are required if we want to separate statements in single line i.e.</p>
+
+    <pre><code>
+alert('Stay'); alert('Home');
+// but this will also work:
+alert('Stay')
+alert('Home')
+// but this will NOT WORK:
+alert('Stay') alert('Home')
+</code></pre>
+
+    <p>AS you can see they are not required. However, some people believe that it is a good practice to put them in at
+        the end of each statement. </p>
+
+
+    <h2>Variables - declaration / assignment / usage </h2>
+
+    <p>
+        We can easily grasp the concept of a “variable” if we imagine it as a “box” for data, with a uniquely-named
+        sticker on it.
+        For instance, the variable message can be imagined as a box labeled "message" with the value "Hello!" in it:
+        We can put any value in the box. </p>
+
+
+    <img src="assets/variablebox.jpg" alt="variables">
+
+
+    <p>
+
+
+        In order to use variables, we have to:
+
+        <ol>
+            <li> Declare it:</li>
+<pre><code>
+var message; 
+</code></pre>
+            <li>Assign value to it: </li>
+<pre><code>
+    message = 'Hello!';
+</code></pre>
+            <li>Finally use it:</li>
+<pre><code>
+alert(message);
+</code></pre>
+
+        </ol>
+    </p>
+
+
+<p>We can do first two steps in a 1 shot</p>
+
+<pre><code>
+var message =  'Hello!';
+</code></pre>
+
+<p>We can also change it as many times as we want:</p>
+
+<img src="assets/changevariable.png" alt="Change variable">
+
+<pre><code>
+let message;
+message = 'Hello!';
+message = 'World!'; // value changed
+console(message);
+</code></pre>
+
+<p>We can also declare two variables and copy data from one into the other.</p>
+
+<pre><code>
+let hello = 'Hello World!';
+let message;
+
+// copy 'Hello world' from hello into message
+message = hello;
+
+// now two variables hold the same data
+console.log(hello); //Hello world!
+console.log(message); //Hello world!
+</code></pre>
+
+
+
+<h2>Variable types</h2>
+
+<p>A variable in JavaScript can contain any data.</p>
+
+<p>A variable can at one moment be a string and at another be a number:</p>
+
+<pre><code>
+let message = "hello";
+console.log(message);
+console.log(typeof(message));
+message = 123456;
+console.log(message);
+console.log(typeof(message));
+</code></pre>
+
+<p>Numbers can include floating point numbers </p>
+
+<pre>
+<code>
+let n = 123;
+n = 12.345;
+</code>
+</pre>
+
+<p>Number operations (stop using console.log)</p>
+
+<pre>
+    <code>
+let n = 123;
+n = 12.345;
+let m = n*2;
+console.log(m);
+    </code>
+</pre>
+   
+
+<p>Why variable types are important?</p>
+
+<pre><code>
+let a = "string";
+let b = 5;
+let c = a * b;
+console.log(c);
+let d = a+b;
+</code></pre>
+
+<p>What will be output of d?</p>
+
+<pre><code>
+console.log(d);
+</code></pre>
+
+<p>So we can add strings to each other i.e.</p>
+
+<pre><code>
+let name = "John";
+let city = "New York";
+let age = 35;
+
+let message = "Hi! My name is " + name + ". I am " + age + " and I live in " + city;
+
+console.log(message);
+</code></pre>
+   
+
+<h2>Arrays </h2>
+
+<p>What is an Array?</p>
+
+
+<p>An array is a special variable, which can hold more than one value at a time.</p>
+
+<p>If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:</p>
+
+
+<pre><code>
+var car1 = "Saab";
+var car2 = "Volvo";
+var car3 = "BMW";
+</code></pre>
+
+<p>But you can imagine that in case of all brands might be inefficient. That's the best use case to use arrays:</p>
+
+<pre><code>
+let cars = ['Saab' , 'Volvo', 'BMW'];
+</code></pre>
+
+
+<p>How to access arrays elements?</p>
+
+<pre><code>
+console.log(cars[0]);
+</code></pre>
+
+
+
+
+        </body>
+
+        </html>

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+    <h1>Loops</h1>
+    
+<p>We often need to repeat actions.</p>
+
+<p>For example, outputting goods from a list one after another or just running the same code for each number from 1 to 10.</p>
+ 
+<p>Loops are a way to repeat the same code multiple times.</p>
+
+
+    <h2> The “for” loop  </h2>
+   
+<p>Let's have a look at following example:</p>
+
+<pre><code>
+    for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+        alert(i);
+    }
+    
+</code></pre>
+   
+<p>Loop schemat: </p>
+
+<pre><code>
+    for (begin; condition; step) {
+        // ... loop body ...
+    }
+
+
+    */
+    begin       i = 0       Executes once upon entering the loop.
+    condition   i < 3       Checked before every loop iteration. If false, the loop stops.
+    body        alert(i)    Runs again and again while the condition is truthy.
+    step        i++         Executes after the body on each iteration.
+
+    i++ is a shorter veriosn of i = i + 1;  
+    */
+</code></pre>
+
+
+<p>Example:</p>
+
+<pre><code>
+for (let i = 0; i < 20; i++) { // shows 0, then 1, then 2
+    if(i%2 == 0) {
+        console.log(i + " is even");
+    }
+}
+</code></pre>
+
+<h3>Break</h3>
+
+<p> We can break loop at any moment , i.e. let's say we are searching for first number which can be divided by 9 and then stop</p>
+
+
+<pre><code>
+for (let i = 1; i < 120; i++) { // shows 0, then 1, then 2
+    if(i%9 == 0) {
+        console.log(i + " is even. My work is done here.");
+        break;
+    } else {
+        console.log("Keep on searching.... checking: " + i)
+    }
+}
+</code></pre>
+
+<h3>Continue</h3>
+
+
+
+
+<h2>While</h2>
+
+
+<p>Another kind of loop is while() loop, its also quite simple,</p>
+
+
+<pre><code>
+
+    let i = 0;
+        while (i < 3) { // shows 0, then 1, then 2
+        console.log( i );
+        i++;
+    }
+</code></pre>
+
+<p>so as long a condition in while() is true, the loop will continue. It end when it becomes 0 (false)</p>
+
+
+
+
+
+    
+
+
+</body>
+
+</html>
