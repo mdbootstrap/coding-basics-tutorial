@@ -15,7 +15,6 @@ function calcTime(city, offset) {
     // add local time zone offset
     // get UTC time in msec
     utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-    console.log(utc);
    
     // create new Date object for different city
     // using supplied offset
@@ -38,6 +37,7 @@ console.log(calcTime('London', '+1'));
 </script>
 </head>
 <body>
+    <p>Open console to see result</p>
 
 </body>
 </html>
